@@ -1,0 +1,73 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 900px;
+  background-color: lightgreen;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #145a32;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px;
+}
+
+.botones {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.botones button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #2874a6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.botones button:hover {
+  background-color: #1b4f72;
+}
+
+.descripcion,
+.info {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+.imagen-principal {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  margin-top: 60px;
+  padding: 20px;
+  border-top: 2px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 20px;
+  font-size: 0.9em;
+  color: #666;
+}
