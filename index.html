@@ -6,6 +6,39 @@
   <title>San Francisco Magu</title>  
   <link rel="stylesheet" href="style.css" />
 </head>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .botones button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .imagen-magu {
+      width: 90%;
+      max-width: 600px;
+      height: auto;
+      border: 5px solid transparent;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .imagen-hover {
+      border: 5px solid green;
+    }
+
+    .imagen-presionada {
+      transform: scale(0.9);
+    }
+  </style>
+</head>
 <body>
 
   <h1>SAN FRANCISCO MAGÚ</h1>  
@@ -30,7 +63,7 @@
     </p>  
   </section><br>
 
-  <!-- Imagen con link directo válido -->
+  <!-- Imagen visible al cargar la página -->
   <img 
     src="https://upload.wikimedia.org/wikipedia/commons/5/5e/San_Francisco_Magu.jpg" 
     alt="San Francisco Magu" 
@@ -62,11 +95,11 @@
       imagen.classList.remove('imagen-presionada');
     });
 
-    // Si el mouse sale antes de soltar, también quita el efecto
     imagen.addEventListener('mouseleave', () => {
       imagen.classList.remove('imagen-presionada');
     });
   </script>
+  
   
   
   <section id="servicios">
