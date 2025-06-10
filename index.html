@@ -1,37 +1,60 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>San Francisco Magu</title>
+<html lang="es">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+  <title>San Francisco Magu</title>  
   <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+</head>  
+<body>    
 
-  <h1>SAN FRANCISCO MAGÚ</h1>
-<h1>NICOLAS ROMERO</h1> <BR></BR>
+  <h1>SAN FRANCISCO MAGÚ</h1>  
+  <h1>NICOLÁS ROMERO</h1><br>  
 
-  <div class="botones">
-    <a href="#servicios"><button>Servicios locales</button></a>
-    <a href="#eventos"><button>Eventos</button></a>
-    <a href="#escrituras"><button>Escrituras</button></a>
-    <a href="#opinion"><button>Opinión de Usuario</button></a>
-  </div><br></br>
+  <div class="botones">  
+    <a href="#servicios"><button>Servicios locales</button></a>  
+    <a href="#eventos"><button>Eventos</button></a>  
+    <a href="#escrituras"><button>Escrituras</button></a>  
+    <a href="#opinion"><button>Opinión de Usuario</button></a>  
+  </div><br>
 
-<section>
-  <p class="descripcion">
-    San Francisco Magu es un pueblo Indígena, Otomí de usos y costumbres
-  </p>
+  <section>  
+    <p class="descripcion">  
+      San Francisco Magu es un pueblo indígena, otomí de usos y costumbres.  
+    </p>    
+
+    <p class="info">  
+      Delegación y Copaci San Francisco Magu.<br><br/>  
+      Municipio: Nicolás Romero<br><br/>  
+      Número Telefónico: 5631060708  
+    </p>  
+  </section><br>
 
 
-  <p class="info">
-    Delegación y Copaci San Francisco Magu.<br><br/>
-    Municipio: Nicolás Romero<br><br/>
-    Número Telefónico: 5631060708
-  </p>
-  </section></br>
+  <img 
+    src="https://www.google.com/amp/s/www.infobae.com/america/mexico/2021/10/15/san-francisco-magu-el-unico-pueblo-de-mexico-que-no-paga-impuestos/%3foutputType=amp-type"
+    alt="San Francisco Magu" 
+    class="imagen-magu" 
+    id="imagenMagu"
+  >
 
-  <!-- Servicios -->
+  <script>
+    const imagen = document.getElementById('imagenMagu');
+
+    imagen.addEventListener('mousedown', () => {
+      imagen.classList.add('imagen-presionada');
+    });
+
+    imagen.addEventListener('mouseup', () => {
+      imagen.classList.remove('imagen-presionada');
+    });
+
+    imagen.addEventListener('mouseleave', () => {
+      imagen.classList.remove('imagen-presionada');
+    });
+  </script>
+
+
   <section id="servicios">
       
     <h1>Delegación y COPACI - San Francisco Magú</h1>
@@ -170,28 +193,56 @@
 
   <!-- Opinión -->
   <section id="opinion">
-    <h2>Opinión del Usuario</h2>
-    <form action="#" method="post">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required><br><br>
+  <script>
+    function validarFormulario(event) {
+      const comentarios = document.getElementById("comentarios").value.toLowerCase();
 
-      <label for="edad">Edad:</label>
-      <input type="text" id="edad" name="edad" required><br><br>
+      const groseriasMexicanas = [
+        "chingar", "chingado", "chingada", "chingón", "chingona",
+        "culero", "pendejo", "pendeja",
+        "cabron", "cabrón",
+        "puto", "puta",
+        "verga", "vergón",
+        "pinche", "pinches",
+        "mamón", "mamona",
+        "joto", "maricón",
+        "naco", "zorra"
+      ];
 
-      <label for="satisfaccion">Nivel de satisfacción:</label>
-      <select id="satisfaccion" name="satisfaccion">
-        <option value="muy_satisfecho">Muy satisfecho</option>
-        <option value="satisfecho">Satisfecho</option>
-        <option value="neutral">Neutral</option>
-        <option value="insatisfecho">Insatisfecho</option>
-        <option value="muy_insatisfecho">Muy insatisfecho</option>
-      </select><br><br>
+      for (let palabra of groseriasMexicanas) {
+        if (comentarios.includes(palabra)) {
+          alert("Tu comentario contiene lenguaje ofensivo. Por favor, modifícalo.");
+          event.preventDefault();
+          return false;
+        }
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>Opinión del Usuario</h2>
+  <form action="#" method="post" onsubmit="return validarFormulario(event)">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br><br>
 
-      <label for="comentarios">Comentarios:</label>
-      <textarea id="comentarios" name="comentarios" rows="2" required></textarea><br><br>
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" min="18" required><br><br>
 
-      <button type="submit">Enviar Opinión</button>
-    </form>
+    <label for="satisfaccion">Nivel de satisfacción:</label>
+    <select id="satisfaccion" name="satisfaccion">
+      <option value="muy_satisfecho">Muy satisfecho</option>
+      <option value="satisfecho">Satisfecho</option>
+      <option value="neutral">Neutral</option>
+      <option value="insatisfecho">Insatisfecho</option>
+      <option value="muy_insatisfecho">Muy insatisfecho</option>
+    </select><br><br>
+
+    <label for="comentarios">Comentarios:</label>
+    <textarea id="comentarios" name="comentarios" rows="2" required></textarea><br><br>
+
+    <button type="submit">Enviar Opinión</button><br><br>
+  </form>
   </section></br>
 
   <footer>
