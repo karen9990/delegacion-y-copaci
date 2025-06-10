@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
   <title>San Francisco Magu</title>  
   <link rel="stylesheet" href="style.css" />
-</head>  
-<body>    
+</head>
+<body>
 
   <h1>SAN FRANCISCO MAGÚ</h1>  
   <h1>NICOLÁS ROMERO</h1><br>  
@@ -30,31 +30,45 @@
     </p>  
   </section><br>
 
-
+  <!-- Imagen con link directo válido -->
   <img 
-    src="https://www.google.com/amp/s/www.infobae.com/america/mexico/2021/10/15/san-francisco-magu-el-unico-pueblo-de-mexico-que-no-paga-impuestos/%3foutputType=amp-type"
+    src="https://upload.wikimedia.org/wikipedia/commons/5/5e/San_Francisco_Magu.jpg" 
     alt="San Francisco Magu" 
     class="imagen-magu" 
     id="imagenMagu"
+    onload="console.log('Imagen cargada correctamente')"
+    onclick="alert('Has hecho clic en la imagen')"
   >
 
   <script>
     const imagen = document.getElementById('imagenMagu');
 
+    // Al pasar el mouse, cambia el borde
+    imagen.addEventListener('mouseover', () => {
+      imagen.classList.add('imagen-hover');
+    });
+
+    imagen.addEventListener('mouseout', () => {
+      imagen.classList.remove('imagen-hover');
+    });
+
+    // Al presionar, cambia el tamaño
     imagen.addEventListener('mousedown', () => {
       imagen.classList.add('imagen-presionada');
     });
 
+    // Al soltar, vuelve al tamaño original
     imagen.addEventListener('mouseup', () => {
       imagen.classList.remove('imagen-presionada');
     });
 
+    // Si el mouse sale antes de soltar, también quita el efecto
     imagen.addEventListener('mouseleave', () => {
       imagen.classList.remove('imagen-presionada');
     });
   </script>
-
-
+  
+  
   <section id="servicios">
       
     <h1>Delegación y COPACI - San Francisco Magú</h1>
