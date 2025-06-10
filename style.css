@@ -9,6 +9,31 @@ body {
   max-width: 900px;
   background-color: lightgreen;
   color: #333;
+    }
+
+    .botones button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .imagen-magu {
+      width: 90%;
+      max-width: 600px;
+      height: auto;
+      border: 5px solid transparent;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .imagen-hover {
+      border: 5px solid green;
+    }
+
+    .imagen-presionada {
+      transform: scale(0.9);
+    }
 }
 
 h1 {
